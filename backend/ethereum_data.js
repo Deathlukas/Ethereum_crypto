@@ -10,6 +10,9 @@ socket.addEventListener('open', function (event) {
 // Listen for messages
 socket.addEventListener('message', function (event) {
     console.log('Message from server ', event.data);
+    var data = JSON.parse(event.data);
+    console.log(data);
+    console.log(data.data[0].p); // This get the price of the ethereum from the JSON data.
 });
 
 // Unsubscribe
