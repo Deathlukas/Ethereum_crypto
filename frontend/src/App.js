@@ -2,17 +2,28 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('Loading...');
 
   useEffect(() => {
-    fetch("http://localhost:8000/message")
-      .then((res) => res.text())  // get the response text
-      .then((text) => {
-        console.log(text);  // log the response text
-        setMessage(text);  // set the response text to your state
-      })
-      .catch((error) => console.error('Error:', error));  // log any errors
-  }, []);
+    const interval = setInterval(() => {
+        fetch("http://localhost:8000/price")
+            .then((res) => {
+                if (res.ok) {
+                    return res.json();
+                } else {
+                    throw new Error('Price not available yet');
+                }
+            })
+            .then((data) => {
+                console.log(data.price);
+                setMessage(data.price);
+            })
+            .catch((error) => console.error('Error:', error));
+    }, 1000); // Fetch the price every second
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(interval);
+}, []);
 
   return (
     <div className="App flex items-center justify-center h-screen bg-blue-500">
