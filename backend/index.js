@@ -7,6 +7,9 @@ const app = express();
 const socket = new WebSocket('wss://ws.finnhub.io?token=cnhhfupr01qhlslj333gcnhhfupr01qhlslj3340');
 
 let price;
+let symbol = 'BINANCE:ETHUSDT';
+let timestamp;
+let volume;
 
 // Connection opened -> Subscribe
 socket.addEventListener('open', function (event) {
@@ -16,9 +19,12 @@ socket.addEventListener('open', function (event) {
 // Listen for messages
 socket.addEventListener('message', function (event) {
     var data = JSON.parse(event.data);
+    // console.log('Message from server ', event.data); // Gets all the data from the provided websocket
     if (data.data && data.data.length > 0) {
         price = data.data[0].p; // Update the price variable
-        console.log(price); // This get the price of the ethereum from the JSON data.
+        timestamp = data.data[0].t;
+        volume = data.data[0].v;
+        // console.log(price); // This get the price of the ethereum from the JSON data.
     } else {
         console.log('Unexpected message structure:', data);
     }
@@ -30,6 +36,26 @@ app.get('/price', (req, res) => {
         res.send({price: price}); // Send the price to the client
     } else {
         res.status(500).send({error: 'Price not available yet'});
+    }
+});
+
+app.get('/volume', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    if (volume) {
+        res.send({volume: volume}); // Send the volume to the client
+    } else {
+        res.status(500).send({error: 'Volume not available yet'});
+    }
+});
+
+app.get('/timestamp', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    if (timestamp) {
+        res.send({timestamp: timestamp}); // Send the timestamp to the client
+    } else {
+        res.status(500).send({error: 'Timestamp not available yet'});
     }
 });
 
