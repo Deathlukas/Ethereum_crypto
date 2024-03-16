@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PriceRecharts from "./Recharts";
 import "./App.css";
 
 function App() {
@@ -61,14 +62,19 @@ function App() {
     return () => clearInterval(interval);
 }, []);
 
+// return ( This is how to display the data on the frontend
+  //<div className="App flex items-center justify-center h-screen bg-blue-500">
+    //<h1 className="text-4xl text-white">Price: {price}</h1>
+    //<h2 className="text-3xl text-white">Volume: {volume}</h2>
+    //<h3 className="text-2xl text-white">Timestamp: {timestamp}</h3>
+  //</div>
 return (
-  <div className="App flex items-center justify-center h-screen bg-blue-500">
-    <h1 className="text-4xl text-white">Price: {price}</h1>
-    <h2 className="text-3xl text-white">Volume: {volume}</h2>
-    <h3 className="text-2xl text-white">Timestamp: {timestamp}</h3>
-  </div>
-);
+    <div className="App flex items-center justify-center h-screen">
+      <PriceRecharts />
+    </div>
+  );
 }
+
 
 
 export default App;
