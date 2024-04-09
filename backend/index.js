@@ -20,6 +20,8 @@ socket.addEventListener('open', function (event) {
 socket.addEventListener('message', function (event) {
     var data = JSON.parse(event.data);
     // console.log('Message from server ', event.data); // Gets all the data from the provided websocket
+    data = JSON.parse(event.data); // Parse the JSON data
+    console.log(data); // This gets the data from the JSON data
     if (data.data && data.data.length > 0) {
         price = data.data[0].p; // Update the price variable
         timestamp = data.data[0].t;
