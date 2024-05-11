@@ -62,15 +62,32 @@ function App() {
     return () => clearInterval(interval);
 }, []);
 
-// return ( This is how to display the data on the frontend
-  //<div className="App flex items-center justify-center h-screen bg-blue-500">
-    //<h1 className="text-4xl text-white">Price: {price}</h1>
-    //<h2 className="text-3xl text-white">Volume: {volume}</h2>
-    //<h3 className="text-2xl text-white">Timestamp: {timestamp}</h3>
-  //</div>
 return (
-    <div className="App flex items-center justify-center h-screen">
-      <PriceRecharts />
+    <div className="App relative flex flex-col items-center justify-center h-screen" style={{ backgroundColor: "#37367b" }}>
+      <div className="header py-8 text-7xl text-white mt-12" style={{ position: "absolute", top: 0, left: 0, right: 0, textAlign: "center" }}>
+        <h1>Ethereum</h1>
+      </div>
+      <div className="flex flex-col md:flex-row items-center justify-center w-full mt-24">
+        <div className="md:w-1/2 p-4 flex justify-center">
+          <PriceRecharts />
+        </div>
+        <div className="md:w-1/2 p-4 flex justify-center">
+          <div className="text-white">
+            <div className="flex justify-between items-center mb-4">
+              <h1 className="text-4xl mr-4">Price:</h1>
+              <p className="text-3xl">{price}</p>
+            </div>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-3xl mr-4">Volume:</h2>
+              <p className="text-2xl">{volume}</p>
+            </div>
+            <div className="flex justify-between items-center">
+              <h3 className="text-2xl mr-4">Timestamp:</h3>
+              <p>{timestamp}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

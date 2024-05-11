@@ -12,7 +12,7 @@ socket.addEventListener('message', function (event) {
     console.log('Message from server ', event.data);
     var data = JSON.parse(event.data);
     if (data.data && data.data.length > 0) {
-        console.log(data.data[0].p); // This get the price of the ethereum from the JSON data.
+        // console.log(data.data[0].p); // This get the price of the ethereum from the JSON data.
     } else {
         console.log('Unexpected message structure:', data);
     }

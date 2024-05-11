@@ -27,7 +27,7 @@ function PriceRecharts() {
 
 return (
     <LineChart width={500} height={300} data={data}>
-        <Line type="monotone" dataKey="price" stroke="#8884d8" />
+        <Line type="monotone" dataKey="price" stroke="red" dot={true} />
         <CartesianGrid stroke="#ccc" />
         <XAxis dataKey="timestamp" />
         <YAxis />
