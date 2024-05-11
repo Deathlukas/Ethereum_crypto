@@ -54,9 +54,7 @@ function App() {
                 console.error('Error:', error);
                 setTimestamp('Loading...');
             });
-    }, 1000); // Fetch the price every second
-
-    
+    }, 1000); // Fetch the data every second
 
     // Clean up the interval on component unmount
     return () => clearInterval(interval);
@@ -91,7 +89,5 @@ return (
     </div>
   );
 }
-
-
 
 export default App;
