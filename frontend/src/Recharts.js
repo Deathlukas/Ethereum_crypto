@@ -19,7 +19,7 @@ function PriceRecharts() {
         .catch((error) => {
             console.error('Error:', error);
         });
-    }, 1000); // Fetch the price and timestamp every second
+    }, 30000); // Fetch the price and timestamp every second
 
             // Clean up the interval on component unmount
             return () => clearInterval(interval);
@@ -27,7 +27,7 @@ function PriceRecharts() {
 
 return (
     <LineChart width={500} height={300} data={data}>
-        <Line type="monotone" dataKey="price" stroke="red" dot={true} />
+        <Line type="monotone" dataKey="price" stroke="red" dot={true} fill="red" area={true} />
         <CartesianGrid stroke="#ccc" />
         <XAxis dataKey="timestamp" />
         <YAxis />

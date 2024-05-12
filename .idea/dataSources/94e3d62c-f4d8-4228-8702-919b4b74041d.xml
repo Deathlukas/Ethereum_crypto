@@ -3,9 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.51">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>752</IntrospectionStateNumber>
+      <IntrospectionStateNumber>14828</IntrospectionStateNumber>
       <ServerVersion>16.2</ServerVersion>
-      <StartupTime>1715405682</StartupTime>
+      <StartupTime>1715491987</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -801,7 +801,7 @@ false Zulu
 14697||10|C|G
 14697||-9223372036854775808|U|G
 14697||10|U|G</Grants>
-      <IntrospectionStateNumber>752</IntrospectionStateNumber>
+      <IntrospectionStateNumber>14828</IntrospectionStateNumber>
       <ObjectId>5</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4234,130 +4234,74 @@ false Zulu
     <schema id="264" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>752</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2024-05-11.08:17:51</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>14828</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2024-05-12.06:46:43</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>524</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
-    <sequence id="265" parent="264" name="ethereum_prices_id_seq">
+    <sequence id="265" parent="264" name="websocket_data_id_seq">
       <DasType>integer|0s</DasType>
-      <ObjectId>16398</ObjectId>
+      <ObjectId>16417</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>746</StateNumber>
+      <StateNumber>10038</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="266" parent="264" name="websocket_data_id_seq">
-      <DasType>integer|0s</DasType>
-      <ObjectId>16408</ObjectId>
-      <SequenceIdentity>1</SequenceIdentity>
-      <StartValue>1</StartValue>
-      <StateNumber>751</StateNumber>
-      <OwnerName>postgres</OwnerName>
-    </sequence>
-    <table id="267" parent="264" name="ethereum_prices">
-      <ObjectId>16399</ObjectId>
-      <StateNumber>746</StateNumber>
+    <table id="266" parent="264" name="websocket_data">
+      <ObjectId>16418</ObjectId>
+      <StateNumber>10038</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="268" parent="264" name="websocket_data">
-      <ObjectId>16409</ObjectId>
-      <StateNumber>751</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <column id="269" parent="267" name="id">
-      <DasType>integer|0s</DasType>
-      <DefaultExpression>nextval(&apos;ethereum_prices_id_seq&apos;::regclass)</DefaultExpression>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>746</StateNumber>
-      <SequenceId>16398</SequenceId>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="270" parent="267" name="timestamp">
-      <DasType>timestamp|0s</DasType>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
-      <Position>2</Position>
-      <StateNumber>746</StateNumber>
-      <TypeId>1114</TypeId>
-    </column>
-    <column id="271" parent="267" name="price">
-      <DasType>numeric|0s</DasType>
-      <Position>3</Position>
-      <StateNumber>746</StateNumber>
-      <TypeId>1700</TypeId>
-    </column>
-    <index id="272" parent="267" name="ethereum_prices_pkey">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16406</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>746</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="273" parent="267" name="ethereum_prices_pkey">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16407</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>746</StateNumber>
-      <UnderlyingIndexId>16406</UnderlyingIndexId>
-    </key>
-    <column id="274" parent="268" name="id">
+    <column id="267" parent="266" name="id">
       <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;websocket_data_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>751</StateNumber>
-      <SequenceId>16408</SequenceId>
+      <StateNumber>10038</StateNumber>
+      <SequenceId>16417</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="275" parent="268" name="symbol">
-      <DasType>varchar(50)|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="268" parent="266" name="symbol">
+      <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
-      <StateNumber>751</StateNumber>
+      <StateNumber>10038</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="276" parent="268" name="price">
+    <column id="269" parent="266" name="price">
       <DasType>numeric|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>751</StateNumber>
+      <StateNumber>10038</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <column id="277" parent="268" name="timestamp">
+    <column id="270" parent="266" name="timestamp">
       <DasType>timestamp|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>751</StateNumber>
+      <StateNumber>10038</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="278" parent="268" name="volume">
+    <column id="271" parent="266" name="volume">
       <DasType>numeric|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>751</StateNumber>
+      <StateNumber>10038</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <index id="279" parent="268" name="websocket_data_pkey">
+    <index id="272" parent="266" name="websocket_data_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16415</ObjectId>
+      <ObjectId>16424</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>751</StateNumber>
+      <StateNumber>10038</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="280" parent="268" name="websocket_data_pkey">
+    <key id="273" parent="266" name="websocket_data_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16416</ObjectId>
+      <ObjectId>16425</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>751</StateNumber>
-      <UnderlyingIndexId>16415</UnderlyingIndexId>
+      <StateNumber>10038</StateNumber>
+      <UnderlyingIndexId>16424</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

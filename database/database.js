@@ -9,12 +9,15 @@ const pool = new Pool({
     port: process.env.DB_PORT
 });
 
-(async () => {
+const connectToDatabase = async () => {
     try {
         const client = await pool.connect();
         console.log('Connected to database');
-        client.release();
+        return client;
     } catch (err) {
         console.error('Error connecting to database:', err);
+        throw err; 
     }
-})();
+};
+
+module.exports = { pool, connectToDatabase };

@@ -47,16 +47,18 @@ function App() {
             })
             .then((data) => {
                 console.log(data.timestamp);
-                const date = new Date(data.timestamp);
-                setTimestamp(date.toLocaleString());
+                const dateParts = data.timestamp.split(' '); 
+                const formattedDateParts = dateParts[0].split(','); 
+                const formattedTime = dateParts[1];
+                const formattedDate = `${formattedDateParts[2]}-${formattedDateParts[1]}-${formattedDateParts[0]}`;
+                setTimestamp(`${formattedDate} ${formattedTime}`);
             })
             .catch((error) => {
                 console.error('Error:', error);
                 setTimestamp('Loading...');
             });
-    }, 1000); // Fetch the data every second
+    }, 30000);
 
-    // Clean up the interval on component unmount
     return () => clearInterval(interval);
 }, []);
 
