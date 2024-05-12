@@ -6,24 +6,21 @@ function PriceRecharts() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            Promise.all([
-                fetch("http://localhost:8000/price"),
-                fetch("http://localhost:8000/timestamp")
-            ])
-
-        .then(([priceRes, timestampRes]) => Promise.all([priceRes.json(), timestampRes.json()]))
-        .then(([priceData, timestampData]) => {
-            const date = new Date(timestampData.timestamp);
-            setData(oldData => [...oldData, {timestamp: date.toLocaleString(), price: priceData.price}]);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-    }, 30000); // Fetch the price and timestamp every second
-
-            // Clean up the interval on component unmount
-            return () => clearInterval(interval);
-}, []);
+            fetch("http://localhost:8000/alldata")
+                .then(response => response.json())
+                .then(data => {
+                    const formattedData = data.map(item => ({
+                        timestamp: new Date(item.timestamp).toLocaleString(),
+                        price: parseFloat(item.price)
+                    }));
+                    setData(formattedData);
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }, 30000);
+        return () => clearInterval(interval);
+    }, []);
 
 return (
     <LineChart width={500} height={300} data={data}>
@@ -37,9 +34,4 @@ return (
 );
 }
     
-
-
-
-
-
 export default PriceRecharts;
