@@ -57,33 +57,33 @@ function App() {
                 console.error('Error:', error);
                 setTimestamp('Loading...');
             });
-    }, 30000);
+    }, 5000);
 
     return () => clearInterval(interval);
 }, []);
 
 return (
-    <div className="App relative flex flex-col items-center justify-center h-screen" style={{ backgroundColor: "#37367b" }}>
-      <div className="header py-8 text-7xl text-white mt-12" style={{ position: "absolute", top: 0, left: 0, right: 0, textAlign: "center" }}>
+    <div className="App relative flex flex-col items-center justify-center h-screen" style={{ backgroundColor: "#14044d" }}>
+      <div className="header py-8 text-7xl text-white mt-12" style={{ color: "#c6c5d4" }}>
         <h1>Ethereum</h1>
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-center w-full mt-24">
+      <div className="flex flex-col md:flex-row items-center justify-center w-full mt-20">
         <div className="md:w-1/2 p-4 flex justify-center">
           <PriceRecharts />
         </div>
         <div className="md:w-1/2 p-4 flex justify-center">
           <div className="text-white">
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex justify-between items-center mb-4" style={{ color: "#c6c5d4" }}>
               <h1 className="text-4xl mr-4">Price:</h1>
-              <p className="text-3xl">{price}</p>
+              <p className="text-4xl">{price}</p>
             </div>
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-3xl mr-4">Volume:</h2>
-              <p className="text-2xl">{volume}</p>
+            <div className="flex justify-between items-center mb-4" style={{ color: "#c6c5d4" }}>
+              <h2 className="text-4xl mr-4">Volume:</h2>
+              <p className="text-4xl">{volume}</p>
             </div>
-            <div className="flex justify-between items-center">
-              <h3 className="text-2xl mr-4">Timestamp:</h3>
-              <p>{timestamp}</p>
+            <div className="flex justify-between items-center" style={{ color: "#c6c5d4" }}>
+              <h3 className="text-4xl mr-4">Timestamp:</h3>
+              <p className="text-4x1">{timestamp}</p>
             </div>
           </div>
         </div>

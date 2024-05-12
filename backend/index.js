@@ -42,35 +42,36 @@ socket.addEventListener('message', async function (event) {
 
 const fetchDataAndUpdateDatabase = async () => {
     try {
-        socket.addEventListener('message', async function (event) {
-            var data = JSON.parse(event.data);
-            if (data.data && data.data.length > 0) {
-                const timestampLocal = moment().tz('Europe/Copenhagen');
-                const formattedDate = timestampLocal.format('DD,MM,YYYY');
-                const formattedTime = timestampLocal.format('HH:mm:ss');
+        const timestampLocal = moment().tz('Europe/Copenhagen');
+        const formattedDate = timestampLocal.format('DD,MM,YYYY');
+        const formattedTime = timestampLocal.format('HH:mm:ss');
 
-                for (const datapoint of data.data) {
-                    const price = datapoint.p;
-                    const volume = datapoint.v;
-                    const client = await pool.connect();
-                    const queryText = 'INSERT INTO websocket_data (symbol, price, timestamp, volume) VALUES ($1, $2, $3, $4)';
-                    const values = ['BINANCE:ETHUSDT', price, `${formattedDate} ${formattedTime}`, volume];
-                    await client.query(queryText, values);
-                    client.release();
-                }
-
-                console.log('Data fetched and updated in the database');
-            } else {
-                console.log('Unexpected message structure:', data);
-            }
+        var data = await new Promise((resolve, reject) => {
+            socket.once('message', (event) => {
+                resolve(JSON.parse(event.data));
+            });
         });
+
+        if (data.data && data.data.length > 0) {
+            for (const datapoint of data.data) {
+                const price = datapoint.p;
+                const volume = datapoint.v;
+                const client = await pool.connect();
+                const queryText = 'INSERT INTO websocket_data (symbol, price, timestamp, volume) VALUES ($1, $2, $3, $4)';
+                const values = ['BINANCE:ETHUSDT', price, `${formattedDate} ${formattedTime}`, volume];
+                await client.query(queryText, values);
+                client.release();
+            }
+            console.log('Data fetched and updated in the database');
+        } else {
+            console.log('Unexpected message structure:', data);
+        }
     } catch (error) {
         console.error('Error fetching data and updating database:', error);
     }
 };
 
-fetchDataAndUpdateDatabase();
-setInterval(fetchDataAndUpdateDatabase, 30000); 
+setInterval(fetchDataAndUpdateDatabase, 300000);
 
 app.use(cors());
 

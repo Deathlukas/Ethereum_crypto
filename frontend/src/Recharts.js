@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Area } from 'recharts';
 
 function PriceRecharts() {
     const [data, setData] = useState([]);
@@ -18,13 +18,13 @@ function PriceRecharts() {
                 .catch(error => {
                     console.error('Error fetching data:', error);
                 });
-        }, 30000);
+        }, 1000);
         return () => clearInterval(interval);
     }, []);
 
 return (
-    <LineChart width={500} height={300} data={data}>
-        <Line type="monotone" dataKey="price" stroke="red" dot={true} fill="red" area={true} />
+    <LineChart width={1000} height={600} data={data}>
+        <Line type="monotone" dataKey="price" stroke="red" dot={true} fill="red"/>  
         <CartesianGrid stroke="#ccc" />
         <XAxis dataKey="timestamp" />
         <YAxis />
