@@ -48,7 +48,14 @@ const fetchDataAndUpdateDatabase = async () => {
 
         var data = await new Promise((resolve, reject) => {
             socket.once('message', (event) => {
-                resolve(JSON.parse(event.data));
+                if (event.type === 'trade') {
+                    resolve(JSON.parse(event.data));
+                } else {
+                    if (event.type === 'ping') {
+                        socket.send('pong')
+                    }
+                    reject('Unexpected message structure:', event);
+                }
             });
         });
 
