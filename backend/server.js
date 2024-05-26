@@ -109,6 +109,18 @@ app.get('/alldata', async (req, res) => {
     }
 });
 
+app.get('/data', async (req, res) => {
+    try {
+        const client = await database.connectToDatabase();
+        const result = await client.query('SELECT price, symbol, volume, timestamp FROM websocket_data ORDER BY timestamp DESC LIMIT 1');
+        client.release();
+        res.json(result.rows[0]);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
 app.get('/message', (req, res) => {
     res.send('Does this work?');
 });

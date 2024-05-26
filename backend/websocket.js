@@ -8,7 +8,7 @@ class WebSocketSingleton {
             this.socket = new WebSocket('wss://ws.finnhub.io?token=cnhhfupr01qhlslj333gcnhhfupr01qhlslj3340');
 
             this.socket.addEventListener('open', (event) => {
-                this.socket.send(JSON.stringify({ 'type': 'subscribe', 'symbol': 'BINANCE:ETHUSDT' }));
+                this.socket.send(JSON.stringify({'type': 'subscribe', 'symbol': 'BINANCE:ETHUSDT'}));
             });
 
             this.socket.addEventListener('message', async (event) => {
