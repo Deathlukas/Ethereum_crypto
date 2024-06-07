@@ -8,6 +8,30 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/94e3d62c-f4d8-4228-8702-919b4b74041d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/94e3d62c-f4d8-4228-8702-919b4b74041d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/94e3d62c-f4d8-4228-8702-919b4b74041d/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/94e3d62c-f4d8-4228-8702-919b4b74041d/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/cookie/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/cookie/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/cookie/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/cookie/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/cookie/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/cookie/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/cookie/SECURITY.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/cookie/SECURITY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/cookie/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/cookie/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/cookie/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/cookie/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/History.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/History.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/express.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/express.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/middleware/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/middleware/init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/middleware/query.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/middleware/query.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/response.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/response.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/router/layer.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/router/layer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/router/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/router/route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,19 +49,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenDatabaseViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Lukas Andersen/Desktop/Universitet/Ethereum_crypto"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenDatabaseViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lukas Andersen/Desktop/Universitet/Ethereum_crypto&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
 </project>
